@@ -6,6 +6,7 @@ public class simple5 {
     int n=sc.nextInt();
     dayin(n);
 }
+//根据年龄段判断是青少年等
 public  static void dayin( int n){
 
     if(n<=18){

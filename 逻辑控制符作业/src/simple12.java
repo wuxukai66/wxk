@@ -1,5 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
+//猜数字游戏
 public class simple12 {
     public static void main(String[] args) {
         System.out.println("请输入你猜的数字1-100");

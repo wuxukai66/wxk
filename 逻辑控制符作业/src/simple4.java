@@ -6,6 +6,7 @@ Scanner sc=new Scanner(System.in);
 int n=sc.nextInt();
         isLeapYear(n);
     }
+//    判断所输入的年份是否为闰年
     public static void isLeapYear( int n){
         int i=0;
         int flag=0;
@@ -15,9 +16,9 @@ int n=sc.nextInt();
                 break;
             }
         }if(flag==0){
-            System.out.println("该数为素数");
+            System.out.println("闰年");
         }else {
-            System.out.println("不是素数");
+            System.out.println("不是闰年");
         }
     }
 }

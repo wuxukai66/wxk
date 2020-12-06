@@ -1,4 +1,5 @@
 public class simple13 {
+//    求整数在存储中二进制的个数
     public static void main(String[] args) {
 geshu(6);
     }

@@ -1,4 +1,5 @@
 import java.util.Scanner;
+//分别打印整数存储中奇数位和偶数位
 public class simple14 {
     public static void main(String[] args){
         System.out.println("请输入数字");

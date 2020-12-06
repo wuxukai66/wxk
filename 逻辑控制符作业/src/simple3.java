@@ -2,7 +2,7 @@ public class simple3 {
     public static void main(String[] args) {
         sushu();
     }
-
+//1-100之间的素数
     public static void sushu() {
         int i = 0;
         int j = 0;

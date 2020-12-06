@@ -1,4 +1,5 @@
 public class simple9 {
+//    分数和
     public static void main(String[] args) {
         fenshuhe();
     }
