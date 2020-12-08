@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="分数求和.c">
+    <ClCompile Include="1-100中9的个数.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="分数求和.c" />
+    <ClCompile Include="1-100中9的个数.c" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{E5AF1A8C-5AC2-4C37-8CE2-2E8E4FA0B652}</ProjectGuid>
