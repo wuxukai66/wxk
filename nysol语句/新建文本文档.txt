@@ -1,0 +1,47 @@
+宿舍查宿系统
+create table dormitory(id int,number int primary key);
+create table student(student_sn int ,student_name varchar(10),
+foreign key (student_sn) references dormitory(number));
+create table checked(sn int ,name varchar(10),status char(4),
+foreign key (sn) references dormitory(number));
+insert into dormitory (id,number) values (1,101);
+insert into student(student_sn,student_name) values (101,'张三'),(101,'李四'),(101,'张三丰');
+insert into checked(sn,name,status) values (101,'张三','在宿舍'),(101,'李四','在宿舍');
+考勤系统
+create table worker(id int primary key ,name varchar(10));
+create table attendance_sheet(work_id int,work_name varchar(10),status char(4),
+foreign key (work_id) references worker(id));
+insert into worker (id,name) values (110,'张三'),(111,'李四'),(112,'张三丰');
+insert into attendance_sheet(work_id,work_name ,status) values (110,'张三','出勤'),(111,'李四','旷工');
+//员工表
+create table emp(name varchar(10),sex char(1),depart varchar(10),salary decimal(8,2));
+insert into emp(name,sex,depart,salary) values('小红','女','外交部',2000),('小黄','男','外交部',2500),
+('小黑','男','体育部',2000),('小白','女','体育部',3000),('小红','男','美术部',2500),
+('小绿','男','领导',11000),('小青','女','领导',12000);
+ select sex,avg(salary) from emp group by sex;
+select depart, sum(salary) from emp group by depart;
+select depart,sum(salary) from emp  group by depart order by sum(salary) desc  limit 1,1;
+select s1.* from  emp s1,emp s2 where s1.name=s2.name and s1.depart != s2.depart;
+select name,sex,avg(salary) from emp where salary>10000 and sex='男' group by depart;
+//
+create table depart (depart_id int ,name varchar(10));
+create table staff(staff_id int ,name varchar(10),age int,depart_id int );
+create table salary(salary_id int ,staff_id int ,salary decimal(8,2),
+month timestamp);
+insert into depart(depart_id,name) values (1,'体育部'),(2,'文艺部'),(3,'外交部');
+insert into staff(staff_id,name,age,depart_id) values (1,'小红',18,2),(2,'小黄',20,1),(3,'小绿',19,3),
+(4,'小黑',28,2),(5,'小蓝',19,1),(6,'小白',20,3);
+insert into salary(salary_id,staff_id,salary,month) values (1,1,2000,'2016-9-1'),(2,2,3000,'2016-9-1'),(3,3,2500,'2016-9-1'),
+(4,4,5000,'2016-9-1'),(5,5,3500,'2016-9-1')
+,(6,6,4000,'2016-9-1');
+select depart.name,sum(salary.salary)  from (depart left join staff on depart.depart_id=staff.depart_id)
+left join salary on staff.staff_id=salary.staff_id  and salary.month>='2016-9-1'and month<='2016-9-30' 
+group by depart.name;
+select depart.name,count(*) from depart left join staff on depart.depart_id=staff.depart_id group by 
+depart.name;
+select depart.name,salary.month,sum(salary.salary) from (depart left join staff on depart.depart_id=staff.depart_id)
+left join salary on staff.staff_id=salary.staff_id group by depart.name;
+///////
+select a.name,a.grade,b.age from b left join a on  a.name=b.name;
+select salary SecondHighestSalary from employee order by salary desc limit 1,1;
+select * from  t1 union select * from  t2;
