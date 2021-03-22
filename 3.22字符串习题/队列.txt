@@ -1,0 +1,20 @@
+import java.util.*;
+public class Solution {
+    public String LeftRotateString(String str,int n) {
+          if(str.length()==0) return "";
+        StringBuilder s=new StringBuilder();
+        Queue <Character> queue=new LinkedList<>();
+        char []arr=str.toCharArray();
+        for(int i=0;i<arr.length;i++){
+            queue.offer(arr[i]);
+        }
+        for(int j=0;j<n;j++){
+            queue.poll();
+            queue.offer(arr[j]);
+        }
+        while(!queue.isEmpty()){
+            s.append(queue.poll());
+        }
+        return s.toString();
+    }
+    }
