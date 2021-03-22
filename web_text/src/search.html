@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义搜索</title>
+    <script>
+        function  func(url) {
+    document.getElementById("ifr").setAttribute("src",url);
+        }
+    </script>
+</head>
+<body>
+        <div style="height:50px">
+            <input type="button" value="百度一下" onclick="func('https://www.baidu.com')">
+            <input type="button" value="搜狗" onclick="func('https://www.sogou.com')">
+            <input type="button" value="360" onclick="func('https://www.so.com')">
+        </div>
+<iframe id="ifr" style="width: 100%;height: 500px" src="https://www.baidu.com">
+</iframe>
+</body>
+</html>

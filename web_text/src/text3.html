@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script>
+        function func(type) {
+            var inputusername = document.getElementById("usename");
+            var inputpassword=document.getElementById("password");
+            var inputpassword2=document.getElementById("password2");
+            if(type==1){
+                if(inputusername.value==""){
+                    alert("请输入用户名！");
+                    return false;
+                }
+                if(inputpassword.value==""){
+                    alert("请输入密码！");
+                    return false;
+                }
+                if(inputpassword2.value==""){
+                    alert("请确认密码");
+                    return false;
+                }
+
+                if(inputpassword.value!=inputpassword2.value){
+                    alert("密码不一样！");
+                    return false;
+                }
+                if(inputpassword.value==inputpassword2.value){
+                    alert("注册成功！");
+                    return false;
+                }
+            }
+                else if(type==2){
+                    if(confirm("是否清空数据")){
+                        inputusername.value="";
+                        inputpassword.value="";
+                        inputpassword2.value="";
+                    }
+                }
+
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: center";margin-top="100px;">
+        <h1>注册</h1>
+        <div style="margin-left: -20px;">
+           &nbsp;&nbsp用户名:<input id="usename"type="text"><p></p>
+            &nbsp;&nbsp密&nbsp&nbsp&nbsp&nbsp码:<input id="password" type="password"><p></p>
+            确认密码:<input id="password2" type="password"><p></p>
+        </div>
+        <div>
+            <input type="button" value=" 提 交 "onclick="func(1)" >
+            <input type="button" value=" 清 空 "onclick ="func(2)">
+        </div>
+    </div>
+</body>
+</html>

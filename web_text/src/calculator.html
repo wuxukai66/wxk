@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function func(type){
+            var inputnum1=document.getElementById("num1") ;
+            var inputnum2=document.getElementById("num2");
+            if(type==1){
+                if(inputnum1.value==""){
+                    alert("请先输入数字一");
+                    return false;
+                }
+                if(inputnum2.value==""){
+                    alert("请先输入数字二");
+                    return false;
+                }
+                var total=parseInt(inputnum1.value)+parseInt(inputnum2.value);
+                document.getElementById("最终结果").innerHTML="<h2>最终结果:<strong style='color:red;'>"+total+"</strong></h2>";
+            }else if(type==2){
+                if(inputnum1.value==""){
+                    alert("请先输入数字一");
+                    return false;
+                }
+                if(inputnum2.value==""){
+                    alert("请先输入数字二");
+                    return false;
+                }
+                var total=parseInt(inputnum1.value)-parseInt(inputnum2.value);
+                document.getElementById("最终结果").innerHTML="<h2>最终结果:<strong style='color:red;'>"+total+"</strong></h2>";
+            }else if(type==3){
+                if(inputnum1.value==""){
+                    alert("请先输入数字一");
+                    return false;
+                }
+                if(inputnum2.value==""){
+                    alert("请先输入数字二");
+                    return false;
+                }
+                var total=parseInt(inputnum1.value)*parseInt(inputnum2.value);
+                document.getElementById("最终结果").innerHTML="<h2>最终结果:<strong style='color:red;'>"+total+"</strong></h2>";
+            }
+            else if(type==4){
+                inputnum1.value="";
+                inputnum2.value="";
+                document.getElementById("最终结果").innerHTML = "";
+            }
+
+        }
+    </script>
+</head>
+<body>
+<div style="text-align: center; margin-top:100px">
+    <h1> <strong>计算器</strong></h1>
+    数据一:<input id="num1" type="number"><p></p>
+    数据二:<input id="num2" type="number"><p></p>
+    <div>
+        <input type="button" value="相加" onclick="func(1)">
+        <input type="button" value="相减" onclick="func(2)">
+        <input type="button" value="相乘" onclick="func(3)">
+        <input type="button" value="清空" onclick="func(4)">
+    </div>
+    <div>
+        <div id="最终结果" style="margin-top:50px">
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
