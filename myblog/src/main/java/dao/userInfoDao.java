@@ -18,4 +18,6 @@ public class userInfoDao {
         result = statement.executeUpdate();
         return result;
     }
+
+
 }

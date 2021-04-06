@@ -31,4 +31,15 @@
 <url-pattern>/login</url-pattern>
 </servlet-mapping>
 
+
+
+<!--  文章显示-->
+  <servlet>
+    <servlet-name>myarticle</servlet-name>
+    <servlet-class>services.myarticle</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>myarticle</servlet-name>
+    <url-pattern>/myarticle</url-pattern>
+  </servlet-mapping>
         </web-app>
