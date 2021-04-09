@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改文章</title>
+    <script src="jquery-1.9.1.min.js"></script>
+    <script>
+        var id=0;
+        function mysub3(type) {
+                var title=jQuery("#title");
+                var content=jQuery("#content");
+                if(type==2){
+                    if(confirm("确认清空？")){
+                        title.val("");
+                        content.val("");
+                        return false;
+                    }
+
+                }if(type==1){
+                    if(title.val().trim()==""){
+                        alert("请输入修改的标题");
+                        title.focus();
+                        return false;
+                    }
+                    if(content.val().trim()==""){
+                        alert("请输入修改的内容");
+                        content.focus();
+                        return false;
+                    }
+                    jQuery.getJSON("upart",{
+                        "id":id,
+                        "title":title.val(),
+                        "content":content.val()},
+                    function (data) {
+                        if(data!=null&&data.succ==1){
+                            alert("恭喜修改成功!");
+                            location.href="myarticle.html";
+                        }else{
+                            alert("修改失败！");
+                        }
+                    });
+                }
+        }
+
+        jQuery(function () {
+            var params=location.search;
+            id=params.substring(1).split("=")[1];
+            jQuery.getJSON("init",{"id":id},function (data) {
+                    if(data!=null&&data.succ==1){
+                        //查询文章成功
+                        jQuery("#title").val(data.art.title);
+                        jQuery("#content").val(data.art.content);
+                    }else{
+                        alert("查询文章失败"+data.msg);
+                    }
+            });
+        });
+    </script>
+</head>
+<body>
+            <div style="margin-left: 50px;margin-top: 30px">
+            <h1>文章修改</h1>
+                标题：<input id="title" type="text">
+                <p></p>
+                正文：<textarea style="width: 600px;height:600px;"id="content">
+            </textarea>
+                <p></p>
+                <input value="提交" type="button" onclick="mysub3(1)">
+                <input value="清空" type="button" onclick="mysub3(2)">
+            </div>
+</body>
+</html>

@@ -2,6 +2,7 @@ package services;
 
 import dao.ArticleInfoDao;
 import models.ArticleInfo;
+import models.UserInfo;
 import utils.ResultJSON;
 
 import javax.servlet.ServletException;
@@ -27,11 +28,11 @@ public class myarticle extends HttpServlet {
         if(session==null){
             msg="请先登录！";
         }else{
-            ArticleInfo userinfo=(ArticleInfo) session.getAttribute("userinfo");
+            UserInfo userinfo=(UserInfo) session.getAttribute("userinfo");
             int uid=userinfo.getId();
-            ArticleInfoDao articleInfo = new ArticleInfoDao();
+            ArticleInfoDao articleInfoDao = new ArticleInfoDao();
             try {
-                list=articleInfo.getListByUID(uid);
+                list=articleInfoDao.getListByUID(uid);
                 succ=1;
             } catch (SQLException throwables) {
                 throwables.printStackTrace();

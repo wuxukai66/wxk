@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1"
-         metadata-complete="true">
+         metadata-complete="false">
 <!--  注册-->
   <servlet>
     <servlet-name>registerServlet</servlet-name>
@@ -41,5 +41,14 @@
   <servlet-mapping>
     <servlet-name>myarticle</servlet-name>
     <url-pattern>/myarticle</url-pattern>
+  </servlet-mapping>
+<!--删除-->
+  <servlet>
+    <servlet-name>mydel</servlet-name>
+    <servlet-class>services.mydel</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>mydel</servlet-name>
+    <url-pattern>/mydel</url-pattern>
   </servlet-mapping>
         </web-app>

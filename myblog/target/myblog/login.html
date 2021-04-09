@@ -30,8 +30,9 @@
                 function (data) {
                     if(data!=null&&data.succ==1){
                         alert("登陆成功");
+                        location.href="myarticle.html";
                     }else{
-                        alert("用户名或密码错误！");
+                        alert("用户名或密码错误！"+data.msg);
                     }
                 })
 

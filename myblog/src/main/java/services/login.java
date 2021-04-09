@@ -3,11 +3,14 @@ package services;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dao.Search;
 import dao.userInfoDao;
+import models.UserInfo;
+import utils.ResultJSON;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -25,19 +28,33 @@ public class login extends HttpServlet {
         String password=request.getParameter("password");
         if(username!=null&&!username.equals("")&&password!=null&&!password.equals("")){
 
-            Search search=new Search();
+            userInfoDao userInfoDao = new userInfoDao();
             try {
-                succ=search.search(username,password);
+                // 查询数据库
+                UserInfo userInfo = userInfoDao.getUser(username, password);
+                if (userInfo.getId() > 0) {
+                    // 查到用户了，也就是用户名和密码是正确
+                    succ = 1;
+                    // 将用户信息存放到 session
+                    HttpSession session = request.getSession(); // 用来创建会话
+                    // 将用户信息存放到当前session
+                    session.setAttribute("userinfo", userInfo);
+                } else {
+                    succ = 0;
+                    msg = "用户名或密码输出错误！";
+                }
             } catch (SQLException throwables) {
                 throwables.printStackTrace();
             }
+        } else {
+            // 参数不完整，非法请求
+            msg = "非法请求，参数不完整";
         }
-        PrintWriter writer=response.getWriter();
-        ObjectMapper mapper=new ObjectMapper();
-        HashMap<String,Object> map=new HashMap<>();
-        map.put("succ",succ);
-        map.put("msg",msg);
-        String str=mapper.writeValueAsString(map);
-        writer.println(str);
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("succ", succ);
+        result.put("msg", msg);
+        ResultJSON.write(response, result);
+        }
+
     }
-}
+
