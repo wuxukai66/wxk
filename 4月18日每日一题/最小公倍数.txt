@@ -1,0 +1,28 @@
+输出A和B的最小公倍数
+最小公倍数=A*B/最大公约数
+思路先求出最大公约数，辗转相除法
+import java.util.*;
+public class Main{
+    static int maxyue(int a,int b){
+        while(a%b!=0){
+            int tmp=a;
+            a=b;
+            b=tmp%b;
+        }
+        return b;
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+       int max;
+        if(a>b){
+            max=maxyue(a,b);
+        }else{
+            max=maxyue(b,a);
+        }
+        int x=a*b/max;
+        System.out.println(x);
+        
+    }
+}
