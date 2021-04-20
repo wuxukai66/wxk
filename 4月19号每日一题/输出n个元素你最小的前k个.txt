@@ -1,0 +1,24 @@
+使用集合ArrayList，先找到最后一个元素k保存丙从list中删除，在排序，Collections.sort()默认升序排列
+在打印出前k个。
+
+
+
+import java.util.*;
+public class Main{
+           public static void main(String[] args){
+               Scanner sc=new Scanner(System.in);
+              ArrayList<Integer> list=new ArrayList<>();
+               while(sc.hasNextInt()){
+                
+                  list.add(sc.nextInt());
+               }
+               int a=list.get(list.size()-1);
+               list.remove(list.get(list.size()-1));
+               
+               Collections.sort(list);
+               
+               for(int i=0;i<a;i++){
+                   System.out.print(list.get(i)+" ");
+               }
+           } 
+}
