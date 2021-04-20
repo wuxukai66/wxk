@@ -1,0 +1,34 @@
+hashmap更新value值来输出
+
+
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int[] arr=new int[a];
+        for(int i=0;i<a;i++){
+            arr[i]=sc.nextInt();
+        }
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int i=0;i<arr.length;i++){
+            if(!map.containsKey(arr[i])){
+                map.put(arr[i],1);
+            }else{
+               int b= map.get(arr[i])+1;
+                map.put(arr[i],b);
+            }
+        }
+        int arr2[]=new int[2];
+        int i=0;
+        for(int x:map.keySet()){
+            if(map.get(x)%2!=0){
+               arr2[i]=x;
+                i++;
+            }
+        }
+        Arrays.sort(arr2);
+        System.out.println(arr2[0]+" "+arr2[1]);
+    }
+}
