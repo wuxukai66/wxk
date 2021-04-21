@@ -1,0 +1,21 @@
+只有2*5可以产生0，只需要判断里面有5和包含5的
+
+
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+                Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+   
+        int count=0,j;
+       for(int i=1;i<=a;i++){
+           j=i;
+               while(j%5==0){
+            count++;
+                   j=j/5;
+               }
+           
+       }
+        System.out.println(count);
+    }
+}
