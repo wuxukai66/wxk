@@ -1,0 +1,28 @@
+思路：如果A或者B就是1（根节点），直接返回1；
+左右节点不相等，让大的先走，根节点等于节点除以2
+
+
+import java.util.*;
+
+public class LCA {
+    public int getLCA(int a, int b) {
+        // write code here
+       return  find(a,b);
+    }
+    public int find(int left,int right){
+        if(left==1){
+            return 1;
+        }
+        if(right==1){
+            return 1;
+        }
+        while(left!=right){
+            if(left>right){
+                left=left/2;
+            }else{
+                right=right/2;
+            }
+        }
+        return left;
+    }
+}
