@@ -1,0 +1,41 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext()){
+            String s1=sc.nextLine();
+            String s2=sc.nextLine();
+            System.out.println(AddLonginteger(s1,s2));
+        }
+        
+    }
+    public static String AddLonginteger(String addend,String augend){
+        String s3="";
+        int b=0;
+        
+        while(addend.length()<augend.length()){
+            addend="0"+addend;
+        }
+        while(addend.length()>augend.length()){
+            augend="0"+augend;
+        }
+        for(int i=addend.length()-1;i>=0;i--){
+            
+            char x=addend.charAt(i);
+            char y=augend.charAt(i);
+            int sum=x-48+y-48+b;
+            if(sum<10){
+                s3=sum+s3;
+                b=0;
+            }else{
+                sum=sum%10;
+                s3=sum+s3;
+                b=1;
+            }
+        }
+        if(b==1){
+            s3="1"+s3;
+        }
+        return s3;
+    }
+}
