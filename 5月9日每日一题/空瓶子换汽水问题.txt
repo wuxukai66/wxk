@@ -1,0 +1,33 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNextInt()){
+            int a=sc.nextInt();
+            if(a==0) break;
+            System.out.println(number(a));
+        }
+        
+    }
+    public static int number(int n){
+        int count=0;
+            int p=0;
+            if(n==0||n==1){
+        return 0;
+            }
+        else{
+            //count表示空瓶子数，p表示可以喝到的汽水数
+            
+            while(n>2){
+                p=n/3;
+                count+=p;
+                n=n%3+p;
+            }
+            if(n==2){
+                count++;
+              
+            }
+        }
+          return count;
+    }
+}
