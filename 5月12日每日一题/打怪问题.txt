@@ -1,0 +1,28 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+          Scanner sc=new Scanner(System.in);
+          while(sc.hasNextInt()){
+              int a=sc.nextInt();
+              int[] arr=new int[a+1];
+              for(int i=0;i<=a;i++){
+                arr[i]=sc.nextInt();
+              }
+              for(int j=1;j<=a;j++){
+            if(arr[0]>arr[j]){
+                arr[0]=arr[0]+arr[j];
+                
+            }else{
+                int x=arr[0];
+               while(x%arr[j]!=0){
+                   int tmp=x%arr[j];
+                   x=arr[j];
+                   arr[j]=tmp;
+               }
+                arr[0]+=arr[j];
+            }
+              }
+              System.out.println(arr[0]);
+          }
+    }
+}
