@@ -1,0 +1,21 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext()){
+            String str=sc.next();
+            
+            while(str.length()>1){
+                int m=0;
+                for(int i=0;i<str.length();i++){
+                char n=str.charAt(i);
+                m+=(n-'0');
+                
+            }
+                str=m+"";
+}
+            
+            System.out.println(str);
+        }
+    }
+}
