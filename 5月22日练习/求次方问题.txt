@@ -1,0 +1,16 @@
+
+使用库函数Math.pow
+
+
+import java.lang.*;
+import java.util.*;
+public class Solution {
+    public double Power(double base, int exponent) {
+        if(exponent<0){
+            base=1.0/base;
+            exponent=-exponent;
+        }
+        
+        return Math.pow(base,exponent);
+  }
+}
