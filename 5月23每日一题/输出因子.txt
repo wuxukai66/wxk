@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main{
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNextInt()){
+            int a=sc.nextInt();
+            System.out.println(fenjie(a));
+        }
+    }
+    public static String fenjie(int a){
+        String s=a+" = ";
+        for(int i=2;i<=a;i++){
+               while(a%i==0){
+                   a=a/i;
+                   if(a==1){
+                     s+=i;
+                   }else{
+                       s+=i+" * ";
+                   }
+               } 
+            }
+        return s;
+    }
+}
