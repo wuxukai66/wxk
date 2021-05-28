@@ -1,0 +1,29 @@
+import java.util.*;
+import java.math.*;
+public class Main{
+    public static void main(String[] args){
+    Scanner sc=new Scanner(System.in);
+        while(sc.hasNextInt()){
+            int a=sc.nextInt();
+            System.out.println(getRabbitNum(a));
+        }
+    }
+    public static BigInteger getRabbitNum(int n){
+       if(n==1){
+           return new BigInteger("1");
+       }
+       if(n==2){
+           return new BigInteger("2");
+       }else{
+           BigInteger pre=new BigInteger("1");
+           BigInteger sum=new BigInteger("2");
+           for(int i=3;i<=n;i++){
+               BigInteger tmp=sum;
+               sum=sum.add(pre);
+               pre=tmp;
+           } 
+           return sum;
+       }
+       
+    }
+}
