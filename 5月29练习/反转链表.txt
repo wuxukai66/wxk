@@ -1,0 +1,19 @@
+
+输入一个链表，反转链表后，输出新链表的表头。
+
+
+public class Solution {
+    public ListNode ReverseList(ListNode head) {
+            if(head==null) return null;
+        ListNode cur=head;
+        ListNode pre=cur.next;
+        ListNode tmp=null;
+        while(pre!=null){
+         cur.next=tmp;
+            tmp=cur;
+           cur=pre;
+            pre=pre.next;
+        }
+        cur.next=tmp;
+        return cur;
+    }
