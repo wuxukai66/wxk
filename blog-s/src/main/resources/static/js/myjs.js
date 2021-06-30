@@ -1,0 +1,1 @@
+console("你好，java");
