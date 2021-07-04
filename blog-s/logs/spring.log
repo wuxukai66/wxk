@@ -1,3 +1,15 @@
-2021-06-29 17:08:44.961 DEBUG 3376 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/js/myjs.js", parameters={}
-2021-06-29 17:08:45.060 DEBUG 3376 --- [http-nio-8080-exec-8] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped to ResourceHttpRequestHandler [Classpath [META-INF/resources/], Classpath [resources/], Classpath [static/], Classpath [public/], ServletContext [/]]
-2021-06-29 17:08:45.061 DEBUG 3376 --- [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2021-07-04 20:31:20.325 DEBUG 4064 --- [restartedMain] o.s.boot.devtools.restart.Restarter      : Starting application com.example.demo.DemoApplication with URLs [file:/E:/blog-s/target/classes/]
+2021-07-04 20:31:20.370 DEBUG 4064 --- [restartedMain] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
+2021-07-04 20:31:26.691  INFO 4064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-04 20:31:26.692 DEBUG 4064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2021-07-04 20:31:26.692 DEBUG 4064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2021-07-04 20:31:26.692 DEBUG 4064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2021-07-04 20:31:26.693 DEBUG 4064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@60cc92ae
+2021-07-04 20:31:26.693 DEBUG 4064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@2bdbc2af
+2021-07-04 20:31:26.694 DEBUG 4064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2021-07-04 20:31:26.694  INFO 4064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2021-07-04 20:31:26.703 DEBUG 4064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/user/login?username=root&password=root", parameters={masked}
+2021-07-04 20:31:26.707 DEBUG 4064 --- [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.demo.controller.MyController#login(User, HttpServletRequest)
+2021-07-04 20:31:26.745 DEBUG 4064 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, text/plain, */*, application/json, application/*+json, application/json, application/*+json]
+2021-07-04 20:31:26.746 DEBUG 4064 --- [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing ["登陆成功"]
+2021-07-04 20:31:26.755 DEBUG 4064 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
